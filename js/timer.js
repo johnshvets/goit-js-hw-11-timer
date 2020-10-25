@@ -15,8 +15,8 @@ class CountdownTimer {
       const deltaTime = this.targetDate - currentTime;
       const timeComponents = this.getTime(deltaTime);
 
-      if (currentTime === this.targetDate) {
-        clearInterval(this.timerId);
+      if (currentTime > this.targetDate) {
+        return clearInterval(this.timerId);
       }
       this.updateTimer(timeComponents);
     }, 1000);
